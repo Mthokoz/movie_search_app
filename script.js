@@ -59,7 +59,7 @@ form.addEventListener("submit", (e) => {
     const searchItem = search.value;
 
     if (searchItem){
-        returnMovies(SEARCHAPI + searchitem);
+        returnMovies(SEARCHAPI + searchItem);
         search.value = "";
     }
 });

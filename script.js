@@ -3,8 +3,10 @@
  * API Read Access Token:
  * eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNTQzOTI5Zjk3OTAyZTljNGRkN2YyMjI5ZDI0NDVkZCIsInN1YiI6IjY0ZmEyZGE5ZGMxY2I0MDEwMjhjN2M4NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IZrW4xOrz9_DxDmQHEUQbxDdrurWGWyo5TRr4oRaXx4
  */
-const APILINK = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b543929f97902e9c4dd7f2229d2445dd&page=1';
-const IMG_PATH = 'https://image.tmbd.org/t/p/w1280';
+
+
+const APILINK = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b543929f97902e9c4dd7f2229d2445dd&page=1";
+const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCHAPI="https://api.themoviedb.org/3/search/movie?&api_key=b543929f97902e9c4dd7f2229d2445dd&query=";
 
 const main = document.getElementById("section");
@@ -17,7 +19,7 @@ function returnMovies(url){
     fetch(url).then(res => res.json())
     .then(function(data){
         console.log(data.results);
-        data.results.forEach(elements => {
+        data.results.forEach(element => {
             const div_card = document.createElement('div');
             div_card.setAttribute('class','card');
 
@@ -35,8 +37,8 @@ function returnMovies(url){
             title.setAttribute('id', 'title');
             const center = document.createElement('center');
 
-            title.innerHTML = '${element.title}';
-            image.src = IMG_PATH + elements.poster_path;
+            title.innerHTML = element.title;
+            image.src = IMG_PATH + element.poster_path;
             
             center.appendChild(image);
             div_card.appendChild(center);
@@ -54,7 +56,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     main.innerHTML='';
 
-    const searchItem = search.ariaValueMax;
+    const searchItem = search.value;
 
     if (searchItem){
         returnMovies(SEARCHAPI + searchitem);

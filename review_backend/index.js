@@ -1,15 +1,15 @@
 import app from "./server.js"
 import mongodb from  "mongodb"
-import ReviewsDAO from "./dao/reviesDAO.js"
+import ReviewsDAO from "./dao/reviewsDAO.js"
 
 const MongoClient = mongodb.MongoClient
 const mongo_username = process.env['MONGO_USERNAME']
 const mongo_password = process.env['MONGO_PASSWORD']
-const uri = `${mongo_username}:${mongo_password}`
+const uri = `mongodb+srv://${mongo_username}:${mongo_password}@cluster0.jmhyhcy.mongodb.net/`
 
 const port = 8000
 
-MangoClient.connect(
+MongoClient.connect(
     uri,
     {
         maxPoolSize: 50,

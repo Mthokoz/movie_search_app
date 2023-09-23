@@ -13,7 +13,7 @@
             ],
             "program": "${file}",
             "env": {
-                "MONGO_USERNAME":"lushbabams",
+                "MONGO_USERNAME":"lushabams",
                 "MONGO_PASSWORD":"LvL5vypTljwRoZK3"
             }
         }

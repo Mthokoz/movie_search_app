@@ -57,7 +57,7 @@ export default class ReviewsDAO {
 
         try {
           const deleteResponse = await reviews.deleteOne({
-            _id: ObjectId(reviewId),
+            _id: new ObjectId(reviewId),
           })
     
           return deleteResponse

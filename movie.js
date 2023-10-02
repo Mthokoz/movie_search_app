@@ -116,6 +116,7 @@ function saveReview(reviewInputId, userInputId, id="") {
 }
 
 function deleteReview(id) {
+    console.log(APILINK + id)
     fetch(APILINK + id, {
       method: 'DELETE'
     }).then(res => res.json())
